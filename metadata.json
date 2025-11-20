@@ -1,0 +1,7 @@
+{
+  "name": "HexTerra: Urban Strategy",
+  "description": "A real-world territory control strategy game. Run to capture hexagonal zones, defend your land from rivals, and climb the global leaderboards.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
