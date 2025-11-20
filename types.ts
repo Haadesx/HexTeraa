@@ -1,3 +1,4 @@
+
 export interface LatLng {
   lat: number;
   lng: number;
@@ -8,6 +9,13 @@ export enum CellStatus {
   OWNED = 'OWNED',
   CONTESTED = 'CONTESTED',
   RIVAL = 'RIVAL'
+}
+
+export type GameMode = 'GPS' | 'SIMULATION';
+
+export interface UserProfile {
+  name: string;
+  isNewPlayer: boolean;
 }
 
 export interface HexCell {
@@ -37,19 +45,18 @@ export interface LeaderboardEntry {
 }
 
 export interface GameState {
+  mode: GameMode;
   isRunning: boolean;
   currentPosition: LatLng | null;
   path: LatLng[];
   cells: Map<string, HexCell>;
   stats: PlayerStats;
   lastMessage: string | null;
-  isAnalyzing: boolean;
   showSummary: boolean;
 }
 
-export interface Mission {
+export interface ToastMessage {
   id: string;
   title: string;
-  description: string;
-  targetHexes: string[];
+  type: 'info' | 'success' | 'warning';
 }
